@@ -1,0 +1,4 @@
+export const toLocalDateString = (d=new Date()) => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+export const formatDisplayDate = (s) => new Date(s+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+export const getWeekDays = () => { const a=[]; const t=new Date(); for(let i=6;i>=0;i--){ const d=new Date(t); d.setDate(t.getDate()-i); a.push(toLocalDateString(d)); } return a; };
+export const isDateScheduled = (h,dateStr) => { if(h.status!=='active') return false; if(h.scheduleType==='daily') return true; if(h.scheduleType==='weekdays'){ const day=new Date(dateStr+'T12:00:00').getDay(); return h.weekdays?.includes(day); } return true; };

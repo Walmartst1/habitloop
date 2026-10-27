@@ -1,0 +1,1 @@
+export const validateHabit = (h) => !h.name||h.name.trim().length<2 ? "Name too short" : null;

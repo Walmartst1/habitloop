@@ -1,0 +1,2 @@
+import { NavLink } from "react-router-dom";
+export default function MobileNavigation(){ return <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t flex z-50"><NavLink to="/" className="flex-1 p-3 text-center text-sm">Home</NavLink><NavLink to="/habits" className="flex-1 p-3 text-center text-sm">Habits</NavLink><NavLink to="/checklist" className="flex-1 p-3 text-center text-sm">Today</NavLink><NavLink to="/settings" className="flex-1 p-3 text-center text-sm">Settings</NavLink></nav> }
